@@ -9,5 +9,6 @@ u2if.egg-info
 build
 *.txt.user
 __pycache__
-venv/
+**/venv*
 .vscode
+**/experimental
