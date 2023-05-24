@@ -7,7 +7,7 @@ class Singleton(type):
     def __call__(cls, *args, **kwargs):
         if cls not in cls._instances:
             cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
-        #else:
+        # else:
         #    cls._instances[cls].__init__(*args, **kwargs)
         return cls._instances[cls]
 
@@ -17,8 +17,15 @@ def find_serial_port(vid, pid, serial_number_str=None):
 
     for check_port in ports:
         if hasattr(serial.tools, 'list_ports_common'):
-            if check_port.vid == vid and check_port.pid == pid and \
-                    (serial_number_str is None or check_port.serial_number == serial_number_str):
+            if (
+                check_port.vid == vid
+                and check_port.pid == pid
+                and (
+                    serial_number_str is None
+                    or check_port.serial_number.casefold()
+                    == serial_number_str.casefold()
+                )
+            ):
                 return check_port.device
     return None
 
