@@ -19,6 +19,10 @@ implemantation (libusb or hidraw). See https://github.com/libusb/hidapi/blob/mas
 SUBSYSTEM=="usb", ATTR{idVendor}=="cafe", ATTR{idProduct}=="4005", MODE="0666"
 # Adafruit Feather
 SUBSYSTEM=="usb", ATTR{idVendor}=="239a", ATTR{idProduct}=="00f1", MODE="0666"
+# Adafruit Feather RP2040 CAN Bus
+SUBSYSTEM=="usb", ATTR{idVendor}=="239a", ATTR{idProduct}=="8130", MODE="0666"
+# Adafruit Feather RP2040 ThinkInk
+SUBSYSTEM=="usb", ATTR{idVendor}=="239a", ATTR{idProduct}=="812c", MODE="0666"
 # Adafruit ItsyBitsy
 SUBSYSTEM=="usb", ATTR{idVendor}=="239a", ATTR{idProduct}=="00fd", MODE="0666"
 # Adafruit QT2040 Trinkey
@@ -33,6 +37,8 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="239a", ATTR{idProduct}=="00f7", MODE="0666"
 KERNEL=="hidraw*", ATTRS{idVendor}=="cafe", ATTRS{idProduct}=="4005", TAG+="uaccess", GROUP="plugdev", MODE="0660"
 # Adafruit Feather
 KERNEL=="hidraw*", ATTRS{idVendor}=="239a", ATTRS{idProduct}=="00f1", TAG+="uaccess", GROUP="plugdev", MODE="0660"
+# Adafruit Feather RP2040 CAN Bus
+KERNEL=="hidraw*", ATTRS{idVendor}=="239a", ATTRS{idProduct}=="8130", TAG+="uaccess", GROUP="plugdev", MODE="0660"
 # Adafruit Feather ThinkInk
 KERNEL=="hidraw*", ATTRS{idVendor}=="239a", ATTRS{idProduct}=="812C", TAG+="uaccess", GROUP="plugdev", MODE="0660"
 # Adafruit ItsyBitsy
@@ -66,6 +72,7 @@ The firmware to upload to Pico is u2if/firmware/source/build/u2if.uf2
 Compatible board can be:
  - PICO
  - FEATHER
+ - FEATHER_CAN
  - FEATHER_EPD
  - ITSYBITSY 
  - QTPY
