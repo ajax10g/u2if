@@ -18,7 +18,7 @@ set_property(CACHE BOARD PROPERTY STRINGS PICO FEATHER FEATHER_CAN FEATHER_EPD I
 message(STATUS "Selected board:'${BOARD}'")
 
 # might help for feather?
-#add_compile_definitions(PICO_DEFAULT_BOOT_STAGE2_FILE=${CMAKE_CURRENT_SOURCE_DIR}/../pico-sdk/src/rp2_common/boot_stage2/boot2_generic_03h.S)
+add_compile_definitions(PICO_DEFAULT_BOOT_STAGE2_FILE=${CMAKE_CURRENT_SOURCE_DIR}/../pico-sdk/src/rp2_common/boot_stage2/boot2_generic_03h.S)
 
 if (NOT DEFINED ADC_ENABLED)
         set(ADC_ENABLED 1)
